@@ -81,7 +81,6 @@ func NewMemory(conf Config) (joe.Memory, error) {
 
 func (b *memory) Set(document string, value []byte) error {
 	doc := b.collection.Doc(document)
-	b.logger.Debug("Storing data " + document)
 	_, err := doc.Set(b.ctx, DocumentStore{
 		Value: value,
 	})
